@@ -3,4 +3,10 @@
     padding: 10px;
     margin: 10px;
     width: 400px;
+    border-radius: 4px;
+}
+
+.Ticket > h1, h2, p, .deleteButton {
+    display: flex;
+    justify-content: center;
 }

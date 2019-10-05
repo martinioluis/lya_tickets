@@ -1,6 +1,7 @@
 import React from 'react';
 import Ticket from './Ticket';
 import { useSelector } from 'react-redux';
+import './TicketList.css';
 
 const TicketList = () => {
     const tickets = useSelector(state => state.tickets.tickets);

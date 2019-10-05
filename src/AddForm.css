@@ -1,0 +1,9 @@
+.AddForm {
+    display: flex;
+    justify-content: center;
+}
+
+.AddForm .radio {
+    display: flex;
+    flex-direction: row;
+}

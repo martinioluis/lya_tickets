@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTicketAction } from './actions/ticketsAction';
+import './AddForm.css';
 
 const AddForm = () => {
   const id = useSelector(state => state.tickets.tickets[state.tickets.tickets.length - 1].id);
@@ -29,37 +30,39 @@ const AddForm = () => {
     setTicket({});
   }
   return (
-      <Form onSubmit={onSubmit}>
-        <FormGroup row>
-          <Label>Title </Label>
-          <Input name='title' type='text' placeholder='Title' onChange={onChange}/>
-        </FormGroup>
-        <FormGroup row>
-          <Label>Description </Label>
-          <Input name='description' type='textarea' placeholder='Description' onChange={onChange}/>
-        </FormGroup>
-        <FormGroup tag='fieldset'>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="state"  value='TODO' onChange={onChange} checked/>
-              Todo
-            </Label>
+      <div className="AddForm">
+        <Form onSubmit={onSubmit}>
+          <FormGroup row>
+            <Label>Title </Label>
+            <Input name='title' type='text' placeholder='Title' onChange={onChange}/>
           </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="state" value='DOING' onChange={onChange}/>
-              Doing
-            </Label>
+          <FormGroup row>
+            <Label>Description </Label>
+            <Input name='description' type='textarea' placeholder='Description' onChange={onChange}/>
           </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="state" value='DONE' onChange={onChange}/>
-              Done
-            </Label>
+          <FormGroup tag='fieldset' className='radio'>
+            <FormGroup check>
+              <Label check>
+                <Input type="radio" name="state"  value='TODO' onChange={onChange} checked/>
+                Todo
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type="radio" name="state" value='DOING' onChange={onChange}/>
+                Doing
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type="radio" name="state" value='DONE' onChange={onChange}/>
+                Done
+              </Label>
+            </FormGroup>
           </FormGroup>
-        </FormGroup>
-        <Button type='submit'>Add Ticket</Button>
-      </Form>
+          <Button type='submit'>Add Ticket</Button>
+        </Form>
+      </div>
   )
 }
 

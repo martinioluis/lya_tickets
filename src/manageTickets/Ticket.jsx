@@ -13,7 +13,9 @@ const Ticket = ({id, title, description, state }) => {
             <h1>title: {title}</h1>
             <p>description: {description}</p>
             <p>{state}</p>
-            <Button color='danger' onClick={() => deleteTicket(id)}>X</Button>
+            <div className="deleteButton">
+                <Button color='danger' onClick={() => deleteTicket(id)}>X</Button>
+            </div>
 
             <h2>Modify Ticket {id}</h2>
             <Col lg={12}>

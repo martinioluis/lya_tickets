@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1>Add Ticket:</h1>
-      <Col lg={6}>
+      <Col lg={12}>
         <AddForm />
       </Col>
       <h2>Ticket List:</h2>
